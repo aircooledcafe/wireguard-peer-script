@@ -26,9 +26,9 @@ wg genpsk > ${name}.psk
 ###########################################################
 # append your client as a peer to your SERVER config file #
 ###########################################################
-echo "\n" >> /etc/wireguard/wg0.conf
+
 echo "# ${name} client config" >> /etc/wireguard/wg0.conf
-echo "[Peer}" >> /etc/wireguard/wg0.conf
+echo "[Peer]" >> /etc/wireguard/wg0.conf
 ##############################################
 # change the config file name as appropriate #
 ##############################################
@@ -47,7 +47,7 @@ echo "Address = 10.100.0.${ipincrement}/32, fd08:4711::${ipincrement}/128" >> "$
 ####################################################
 echo "DNS = DNS_SERVER_ADDRESS" >> "${name}.conf"
 echo "PrivateKey = $(cat "${name}.key")" >> "${name}.conf"
-echo "\n" >> "${name}.conf"
+
 echo "[Peer]" >> "${name}.conf"
 #########################################################
 # add your server ip address here as well as you home   #
